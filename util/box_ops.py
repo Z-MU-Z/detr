@@ -6,7 +6,7 @@ import torch
 from torchvision.ops.boxes import box_area
 
 
-def box_cxcywh_to_xyxy(x):
+def box_cxcywh_to_xyxy(x): #从center到边界
     x_c, y_c, w, h = x.unbind(-1)
     b = [(x_c - 0.5 * w), (y_c - 0.5 * h),
          (x_c + 0.5 * w), (y_c + 0.5 * h)]
